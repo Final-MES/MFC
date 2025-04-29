@@ -1,0 +1,9 @@
+.vs/
+bin/
+obj/
+.vs/
+x64/
+Debug/
+*.ipch
+*.db
+*.pch

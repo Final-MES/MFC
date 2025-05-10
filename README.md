@@ -83,7 +83,8 @@
 
 > 추후 주요 화면 캡처 삽입 가능
 
----
+---![image](https://github.com/user-attachments/assets/b582ecac-c9d8-43d2-b241-485a234fb665)
+
 
 ## 🙌 제작자 및 기여
 

@@ -20,7 +20,6 @@
 
   <br>
   <em>HIM MES 시스템 클래스 다이어그램</em>
-</div>
 ![image](https://github.com/user-attachments/assets/c78e825c-d607-4743-902c-afb8e4fba42a)
 
 

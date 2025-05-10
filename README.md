@@ -18,11 +18,12 @@
 - ✔️ 직관적인 대시보드 & 위젯 기반 UI
 - ✔️ 깜빡임 애니메이션 및 아이콘 시각화
 
+## 📊 클래스 다이어그램
+
 <div align="center">
+  <img src="https://github.com/user-attachments/assets/b582ecac-c9d8-43d2-b241-485a234fb665" alt="클래스 다이어그램" width="600" />
   <br>
-  <em>HIM MES 시스템 클래스 다이어그램</em>
-  <br>
-  <img src="https://github.com/user-attachments/assets/c78e825c-d607-4743-902c-afb8e4fba42a" alt="클래스 다이어그램" />
+  <em>Visual Studio에서 확인한 프로젝트 클래스 다이어그램</em>
 </div>
 
 ## 💼 프로젝트 개발 의도 및 기술적 역량
@@ -175,14 +176,6 @@ HIM_MES/
 - [ ] **다국어 지원**: 영어/한국어 언어 전환 기능
 - [ ] **데이터 분석 기능**: 생산 데이터 통계 분석 및 시각화
 - [ ] **알림 시스템**: 이메일/메신저 연동 알림 기능
-
-## 📸 클래스 다이어그램
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/b582ecac-c9d8-43d2-b241-485a234fb665" alt="클래스 다이어그램 뷰" width="600" />
-  <br>
-  <em>Visual Studio에서 확인한 프로젝트 클래스 다이어그램</em>
-</div>
 
 ## 🙌 제작자 및 기여
 

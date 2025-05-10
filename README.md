@@ -19,7 +19,8 @@
 - ✔️ 깜빡임 애니메이션 및 아이콘 시각화
 
 <div align="center">
-  <img src="screenshots/class_diagram.png" alt="클래스 다이어그램" width="600" />
+  ![image](https://github.com/user-attachments/assets/c61ec669-c111-4e17-929f-11ebaf8c6a6a)
+
   <br>
   <em>HIM MES 시스템 클래스 다이어그램</em>
 </div>

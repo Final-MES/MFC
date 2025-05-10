@@ -1,9 +1,12 @@
-
 # HIM MES - Smart Factory Monitoring System
 
-![Language](https://img.shields.io/badge/language-C%2B%2B-blue)
-![Framework](https://img.shields.io/badge/framework-MFC-informational)
-![Platform](https://img.shields.io/badge/platform-Windows-lightgrey)
+<div align="center">
+  <img src="https://img.shields.io/badge/language-C%2B%2B-blue" alt="Language" />
+  <img src="https://img.shields.io/badge/framework-MFC-informational" alt="Framework" />
+  <img src="https://img.shields.io/badge/platform-Windows-lightgrey" alt="Platform" />
+  <img src="https://img.shields.io/badge/Version-1.0.0-success" alt="Version" />
+  <img src="https://img.shields.io/badge/License-MIT-yellow" alt="License" />
+</div>
 
 ## 📌 프로젝트 개요
 
@@ -15,12 +18,36 @@
 - ✔️ 직관적인 대시보드 & 위젯 기반 UI
 - ✔️ 깜빡임 애니메이션 및 아이콘 시각화
 
+<div align="center">
+  <img src="screenshots/class_diagram.png" alt="클래스 다이어그램" width="600" />
+  <br>
+  <em>HIM MES 시스템 클래스 다이어그램</em>
+</div>
+
+## 💼 프로젝트 개발 의도 및 기술적 역량
+
+이 프로젝트는 단순한 MES 시스템 구현을 넘어, 다음과 같은 소프트웨어 개발 역량을 보여주기 위해 설계되었습니다:
+
+### 핵심 개발 역량
+- **객체지향 설계 능력**: 모듈화된 클래스 구조와 상속을 통한 코드 재사용성 확보
+- **UI/UX 디자인 능력**: Owner-Draw 기법과 GDI/GDI+를 활용한 커스텀 컨트롤 및 애니메이션 구현
+- **Windows API 활용 능력**: MFC 프레임워크를 통한 네이티브 Windows 애플리케이션 개발 경험
+- **이벤트 기반 프로그래밍**: 타이머와 사용자 이벤트에 반응하는 반응형 인터페이스 구현
+- **그래픽 프로그래밍**: CDC 클래스를 활용한 저수준 그래픽 렌더링 및 시각화 구현
+
+### 기술적 도전 및 해결 경험
+1. **화면 깜빡임(Flickering) 문제 해결**: WS_EX_COMPOSITED 스타일과 선택적 화면 갱신으로 부드러운 UI 구현
+2. **GDI 리소스 관리 최적화**: 메모리 누수 방지를 위한 명시적 GDI 객체 해제 패턴 적용
+3. **다중 화면 네비게이션**: 일관된 네비게이션 패턴 설계로 사용자 경험 향상
+4. **데이터 시각화**: 차트, 게이지, 아이콘 등 다양한 데이터 시각화 요소 직접 구현
+
 ## 🧱 주요 구성
 
 ### 🖥 로그인 화면 (`LoginDlg`)
 - 사용자 인증
 - 우측 일러스트 삽입 (`IDC_STATIC_RIGHT_IMAGE`)
 - 사용자 친화적 폰트 & 색상
+- 기본 로그인 계정: admin / 1234
 
 ### 🏠 메인 화면 (`MainDlg`)
 - 네비게이션 메뉴: 대시보드 / 생산 / 설비 / 시스템
@@ -28,27 +55,46 @@
 - Owner-draw 버튼 2x2 레이아웃 적용
 
 ### 📊 대시보드 (`DashboardDlg`)
-- KPI, 실시간 현황, 경고 등 요약 제공  
-(*파일 구조에 정의됨 - 현재 UI 구현 생략 또는 예정*)
+- 전체 생산 현황: 실시간 생산 공정 시각화 (컨베이어 벨트 애니메이션)
+- 핵심 성과 지표: 효율, 품질, 가동률 게이지 그래프
+- 실시간 데이터 분석: 그래픽 차트로 트렌드 시각화
+- 긴급 알림: 설비 과열, 재고 부족 등 경고 표시
 
 ### 🏭 생산관리 (`ProductionDlg`)
 - **생산 계획 수립**: 월간 계획표, 달력 기반 인터페이스
 - **작업 지시 및 일정**: 간트 차트 스타일의 작업 바
-- **실시간 생산 상황** 및 **생산 실적 추적** 위젯
+- **실시간 생산 상황**: 라인별 현황 실시간 표시
+- **생산 실적 추적**: 월별 생산량 비교 그래프
 - 애니메이션 효과, 버튼 강조 상태 구현
 
 ### 🛠 설비관리 (`EquipDlg`)
-- 설비 가동 현황
-- 예방 정비 계획
-- 성능 모니터링
-- 고장 및 정비 이력
+- **설비 가동 현황**: 각 설비별 상태 모니터링 (가동/정지) 
+- **예방 정비 계획**: 달력 형태로 정비 일정 표시
+- **설비 성능 모니터링**: 라인 차트 및 막대 그래프로 성능 표시
+- **고장 및 정비 이력**: 설비별 관리 기록 열람 및 검색
 
 ### ⚙ 시스템 구성 (`SystemDlg`)
-- 사용자 권한 관리
-- 시스템 환경 설정
-- 로그 및 감사 추적
-- 데이터 백업 및 복원
-- 위젯 기반 직관적 설정 UI
+- **사용자 권한 관리**: 관리자/일반/손님 권한 설정
+- **시스템 환경 설정**: DB 연결, 서버 상태, 라이선스 등 관리
+- **로그 및 감사 추적**: 시스템 접근 및 변경 기록 확인
+- **데이터 백업 및 복원**: 데이터 안전성 보장
+
+## 🔥 구현된 핵심 기술
+
+### 커스텀 UI 프레임워크
+- **Owner-Draw 컨트롤**: 모든 버튼과 위젯을 완전히 커스터마이징 가능하도록 구현
+- **일관된 디자인 시스템**: 컬러, 폰트, 여백 등을 통일하여 전문적인 UI 구현
+- **그래픽 추상화**: 재사용 가능한 그래픽 함수로 코드 중복 최소화
+
+### 애니메이션 엔진
+- **타이머 기반 애니메이션**: 부드러운 상태 전환과 데이터 변화 시각화
+- **플리커 방지 기법**: 불필요한 화면 갱신을 최소화하는 최적화된 렌더링 전략
+- **다양한 애니메이션 효과**: 깜빡임, 슬라이딩, 페이드 등 다양한 시각적 피드백
+
+### 모듈식 구조
+- **클래스 상속 계층**: 공통 기능을 상위 클래스에 구현하여 코드 재사용성 향상
+- **명확한 책임 분리**: 각 클래스는 단일 책임 원칙에 따라 특정 기능에 집중
+- **일관된 이벤트 처리**: 표준화된 이벤트 핸들링으로 예측 가능한 동작 보장
 
 ## 🎨 기술 스택
 
@@ -58,19 +104,48 @@
 | 프레임워크   | MFC (Microsoft Foundation Class) |
 | 플랫폼       | Windows (Desktop)                |
 | 개발 툴      | Visual Studio                    |
-| UI 구성       | Owner-Draw 버튼 + Custom Paint  |
+| UI 구성      | Owner-Draw 버튼 + Custom Paint   |
+| 애니메이션   | 타이머 기반 위젯 갱신            |
+| 그래픽       | GDI/GDI+ 활용 데이터 시각화      |
+
+## 📚 적용된 디자인 패턴 및 원칙
+
+- **싱글톤 패턴**: 공유 리소스 및 설정 관리에 활용
+- **옵저버 패턴**: 데이터 변경에 따른 UI 자동 갱신
+- **전략 패턴**: 다양한 렌더링 방식을 교체 가능하게 구현
+- **SOLID 원칙**: 특히 단일 책임 원칙과 개방-폐쇄 원칙 준수
+- **DRY (Don't Repeat Yourself)**: 중복 코드 최소화를 위한 유틸리티 함수 활용
 
 ## 📁 파일 구조 요약
 
 ```bash
-├── MainDlg.cpp/h           # 메인 메뉴
-├── LoginDlg.cpp/h          # 로그인 화면
-├── DashboardDlg.cpp/h      # 대시보드
-├── ProductionDlg.cpp/h     # 생산관리
-├── EquipDlg.cpp/h          # 설비관리
-├── SystemDlg.cpp/h         # 시스템 구성
+HIM_MES/
+├── HIM_MES.cpp             # 애플리케이션 메인 파일
+├── HIM_MES.h               # 애플리케이션 헤더 파일
 ├── HIM_MESDlg.cpp/h        # 앱 초기 구동
-├── resource.h              # 리소스 매핑
+├── LoginDlg.cpp/h          # 로그인 화면
+├── MainDlg.cpp/h           # 메인 메뉴
+├── DashboardDlg.cpp/h      # 대시보드
+│   ├── DrawProductionIcon()  # 생산 현황 위젯
+│   ├── DrawKPIIcon()         # 성과 지표 위젯
+│   ├── DrawRealtimeIcon()    # 실시간 데이터 위젯
+│   └── DrawAlertIcon()       # 긴급 알림 위젯
+├── ProductionDlg.cpp/h     # 생산관리
+│   ├── DrawPlanIcon()        # 생산 계획 위젯
+│   ├── DrawScheduleIcon()    # 작업 일정 위젯
+│   ├── DrawLiveStatusIcon()  # 실시간 상황 위젯
+│   └── DrawTrackIcon()       # 실적 추적 위젯
+├── EquipDlg.cpp/h          # 설비관리
+│   ├── DrawRunStatusIcon()   # 가동 현황 위젯
+│   ├── DrawMaintPlanIcon()   # 정비 계획 위젯
+│   ├── DrawMonitoringIcon()  # 성능 모니터링 위젯
+│   └── DrawHistoryIcon()     # 정비 이력 위젯
+├── SystemDlg.cpp/h         # 시스템 구성
+│   ├── DrawUserIcon()        # 사용자 관리 위젯
+│   ├── DrawConfigIcon()      # 환경 설정 위젯
+│   ├── DrawLogIcon()         # 로그 추적 위젯
+│   └── DrawBackupRestoreIcon() # 백업/복원 위젯
+└── resource.h              # 리소스 매핑
 ```
 
 ## 🛠 빌드 및 실행
@@ -78,15 +153,55 @@
 1. Visual Studio에서 `.sln` 프로젝트 열기
 2. `Debug` 또는 `Release` 모드로 설정
 3. 빌드 후 실행 (F5)
+4. 로그인 화면에서 admin / 1234 입력
 
-## 📸 스크린샷 (선택사항)
+## 🚀 개인 성장 포인트
 
-> 추후 주요 화면 캡처 삽입 가능
+이 프로젝트를 통해 다음과 같은 기술적 역량을 향상시켰습니다:
 
----![image](https://github.com/user-attachments/assets/b582ecac-c9d8-43d2-b241-485a234fb665)
+1. **MFC 프레임워크 심화 학습**: 윈도우 네이티브 애플리케이션 개발 전문성 향상
+2. **커스텀 UI 컴포넌트 설계**: 표준 컨트롤의 한계를 넘어서는 사용자 정의 인터페이스 구현 능력
+3. **산업용 소프트웨어 설계**: 제조 현장에 필요한 실용적 소프트웨어 개발 경험
+4. **그래픽 프로그래밍**: GDI를 활용한 데이터 시각화 및 애니메이션 구현 기술
+5. **모듈화된 아키텍처 설계**: 확장 가능하고 유지보수가 용이한 소프트웨어 구조 설계 경험
 
+## 📈 향후 개발 계획
+
+- [ ] **데이터베이스 연동**: MSSQL/SQLite를 활용한 실제 데이터 저장 및 조회 기능 구현
+- [ ] **실시간 센서 데이터 연동**: 가상 센서 데이터 생성 및 실시간 모니터링 시스템 구현
+- [ ] **리포트 생성 모듈**: 생산 현황 및 설비 상태 보고서 자동 생성 기능
+- [ ] **사용자 권한 관리 시스템**: 역할 기반 접근 제어(RBAC) 구현
+- [ ] **다국어 지원**: 영어/한국어 언어 전환 기능
+- [ ] **데이터 분석 기능**: 생산 데이터 통계 분석 및 시각화
+- [ ] **알림 시스템**: 이메일/메신저 연동 알림 기능
+
+## 📸 스크린샷
+
+<div align="center">
+  <img src="screenshots/class_view.png" alt="클래스 뷰" width="600" />
+  <br>
+  <em>HIM MES 프로젝트 클래스 구조 뷰</em>
+</div>
 
 ## 🙌 제작자 및 기여
 
 이 프로젝트는 스마트팩토리 MES 시각화 및 관리 시스템 구현을 목표로 개발되었습니다.  
 기여 및 개선 사항은 PR 또는 이슈로 남겨주세요!
+
+## 🎯 채용 담당자를 위한 안내
+
+이 프로젝트를 통해 다음과 같은 역량을 확인하실 수 있습니다:
+
+1. **C++/MFC 프로그래밍 능력**: 객체지향 설계와 윈도우 네이티브 개발 역량
+2. **UI/UX 구현 능력**: 사용자 친화적인 인터페이스 설계 및 구현 기술
+3. **코드 구조화 능력**: 유지보수와 확장이 용이한 모듈식 아키텍처 설계
+4. **그래픽 처리 기술**: GDI/GDI+를 활용한 커스텀 그래픽 요소 구현
+5. **산업용 소프트웨어 이해**: 제조 현장에 필요한 모니터링 시스템 설계 및 개발 경험
+
+본 프로젝트는 산업용 소프트웨어, 모니터링 시스템, UI 프레임워크 개발 등의 포지션에 적합한 역량을 보여줍니다.
+
+---
+
+<p align="center">
+  <b>HIM MES</b> - 스마트한 공장 관리의 시작
+</p>

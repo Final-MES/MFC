@@ -18,7 +18,6 @@
 - ✔️ 직관적인 대시보드 & 위젯 기반 UI
 - ✔️ 깜빡임 애니메이션 및 아이콘 시각화
 
-<div align="center">
   ![image](https://github.com/user-attachments/assets/c61ec669-c111-4e17-929f-11ebaf8c6a6a)
 
   <br>
